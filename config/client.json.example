@@ -1,0 +1,9 @@
+{
+  "relay_url": "https://your-relay.example/filepipe",
+  "cafile": null,
+  "insecure_skip_verify": false,
+  "key_dir": "./keys",
+  "peer_file": "./peers.txt",
+  "chunk_size": 8388608,
+  "expires_in_hours": 24
+}
