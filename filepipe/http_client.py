@@ -26,10 +26,15 @@ class RelayHttpClient:
                 self.context = ssl.create_default_context(cafile=cafile)
 
     def _request(self, method: str, path: str, data: bytes | None = None, headers: dict[str, str] | None = None) -> bytes:
+        request_headers = dict(headers or {})
+        request_headers.setdefault("Connection", "close")
+        if data is not None:
+            request_headers.setdefault("Content-Length", str(len(data)))
+            request_headers.setdefault("Expect", "")
         request = urllib.request.Request(
             url=self.base_url + path,
             data=data,
-            headers=headers or {},
+            headers=request_headers,
             method=method,
         )
         try:

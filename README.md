@@ -138,3 +138,5 @@ Fields:
 - `peer_file`
 - `chunk_size`
 - `expires_in_hours`
+
+`chunk_size` is an operational compatibility setting. If one specific machine stalls on larger uploads, try a smaller value such as `65536`.
