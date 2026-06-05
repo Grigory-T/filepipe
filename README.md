@@ -26,7 +26,7 @@ Windows PowerShell:
 git clone https://github.com/your-org/filepipe.git
 cd filepipe
 python -m venv .venv
-.\.venv\\Scripts\\pip.exe install -r requirements.txt
+.\.venv\Scripts\pip.exe install -r requirements.txt
 ```
 
 ## First-Time Setup
@@ -44,7 +44,7 @@ Linux:
 Windows PowerShell:
 
 ```powershell
-.\.venv\\Scripts\\python.exe scripts/init_client.py --relay https://your-relay.example/filepipe
+.\.venv\Scripts\python.exe scripts/init_client.py --relay https://your-relay.example/filepipe
 ```
 
 This creates:
@@ -89,7 +89,7 @@ Linux:
 Windows PowerShell:
 
 ```powershell
-.\.venv\\Scripts\\python.exe scripts/send_file.py --peer bob --input .\\file.bin
+.\.venv\Scripts\python.exe scripts/send_file.py --peer bob --input .\file.bin
 ```
 
 The command prints JSON containing `object_id`. Send that `object_id` to the peer over the secure side channel.
@@ -107,7 +107,7 @@ Linux:
 Windows PowerShell:
 
 ```powershell
-.\.venv\\Scripts\\python.exe scripts/receive_file.py --peer bob --object-id=<object-id>
+.\.venv\Scripts\python.exe scripts/receive_file.py --peer bob --object-id=<object-id>
 ```
 
 By default, the file is saved under the original source filename in the current directory.
@@ -139,4 +139,4 @@ Fields:
 - `chunk_size`
 - `expires_in_hours`
 
-`chunk_size` is an operational compatibility setting. If one specific machine stalls on larger uploads, try a smaller value such as `65536`.
+`chunk_size` is an operational compatibility setting. If one specific path stalls on larger transfers, try a smaller value such as `8192`.
